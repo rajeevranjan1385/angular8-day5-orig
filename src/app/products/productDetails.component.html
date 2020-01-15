@@ -1,8 +1,18 @@
 <div class="panel panel-primary">
-    <div class="panel-heading">
-        Product Details
+  <div class="panel-heading">
+    Product Details
+  </div>
+  <div class="panel-body">
+    <div class="text-center">
+      This is detail veiw of Products Page with ID {{ id }}
     </div>
-    <div class="panel-body">
-        <div class="text-center">This is detail veiw of Products Page with ID {{id}}</div>
+    <h2 class="text-center">{{ details[0].productName }}</h2>
+    <div class="text-center">{{ details[0].description }}</div>
+    <div>
+      <img [src]="details[0].imageUrl" />
     </div>
+    <div>
+        <button (click)="OnBack()">Back</button>
+    </div>
+  </div>
 </div>

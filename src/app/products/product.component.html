@@ -43,10 +43,12 @@
               [style.width.px]="imageWidth"
             />
           </td>
-          <td><a [routerLink]="['/product',prod.productId]">
+          <td><a [routerLink]="['/product',prod.productId]"
+            [queryParams]="{name: prod.productName, img:prod.imageUrl, 
+              details: prod.description}">
             {{ prod.productName | myUpperCase: "lower" }}</a>
           </td>
-          <td>{{ prod.productCode | myUpperCase: "upper" }}</td>
+          <td appColor>{{ prod.productCode | myUpperCase: "upper" }}</td>
           <td>{{ prod.price | discount: 6 | currency: "INR" }}</td>
           <td>{{ prod.releaseDate | date: "dd-MM-yyyy" }}</td>
           <td>
